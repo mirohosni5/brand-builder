@@ -1,0 +1,32 @@
+@import "tailwindcss";
+
+@theme {
+  --color-studio-bg: #050505;
+  --color-studio-card: #111111;
+  --color-accent-indigo: #6366f1;
+  --color-accent-rose: #f43f5e;
+  --font-display: "Outfit", "Inter", sans-serif;
+}
+
+@layer base {
+  body {
+    @apply bg-studio-bg text-zinc-100 selection:bg-accent-indigo selection:text-white antialiased;
+  }
+}
+
+@layer utilities {
+  .glass-card {
+    background: rgba(255, 255, 255, 0.03);
+    backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.08);
+  }
+}
+
+@keyframes shimmer {
+  from { transform: translateX(-100%); }
+  to { transform: translateX(100%); }
+}
+
+.animate-shimmer {
+  animation: shimmer 2s infinite linear;
+}
